@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$.getJSON("https://api.ipify.org/?format=json", function(e) {
+	$("#ip_address").val(e.ip);
+});
+</script>
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<form align="center">
+<center>
+<img src="header.png"/>
+<h3><font color="red">This page has been created only for demo purpose and has nothing to do with IPL Contest or IPL Matches.</font></h3>
+
+<h1>Welcome to Cricket IPL Contest</h1>
+<h2>To participate, please fill in the form and click on Submit</h3>
+
+
+<table>
+<tr>
+<td>
+<label>First Name</label>
+</td>
+<td>
+<input type="text" id="first_name" name="first_name"/>
+</td>
+</tr>
+<tr>
+<td>
+<label>Last Name</label>
+</td>
+<td>
+<input type="text" id="last_name" name="last_name"/>
+</td>
+</tr>
+<tr>
+<td>
+<label>Phone</label>
+</td>
+<td>
+<input type="text" id="phone" name="phone"/>
+</td>
+</tr>
+<tr>
+<td>
+<label>Email</label>
+</td>
+<td>
+<input type="text" id="email" name="email"/>
+</td>
+</tr>
+<tr>
+<td>
+<label>Gender</label>
+</td>
+<td>
+<select  id="gender" name="gender">
+<option value="M">Male</option>
+<option value="F">Female</option>
+<input type="hidden" name="ip_address" id="ip_address"/>
+</select>
+</td>
+</tr>
+</table>
+<button type="button" id="submitEntry" name="submitEntry" class="button">Submit</button>
+
+<button type="button" id="sendBatch" name="sendBatch" style="visibility:hidden;">Submit Batch</button>
+</form>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="cricketipl.js"></script>
+</center>
+</body>
+</html>
